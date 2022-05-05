@@ -1,4 +1,0 @@
-$(function(){
-    let header = $("#header")
-
-});
