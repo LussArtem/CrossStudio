@@ -28,14 +28,15 @@ if (menuLinks.length > 0) {
 
             const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - 10;
 
-
             // // Закрываем Бургер меню на мобиле при прокрутке
             // //  если имеет класс, то
-            // if (iconMenu.classList.contains('_active')) {
-            //     document.body.classList.remove('_lock');
-            //     iconMenu.body.classList.remove('_active');
-            //     menuBody.body.classList.remove('_active');
-            // }
+            if (burgerMenu.classList.contains('_active')) {
+                document.body.classList.remove('_hidden');
+                burgerMenu.classList.remove('_active');
+                navItem.classList.remove('_active');
+                header.classList.toggle('_active');
+                // navItem.style.display = "block";
+            }
 
             // Прокручиваем скрол к нужному месту
             window.scrollTo({

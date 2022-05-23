@@ -8,6 +8,10 @@ body {
     box-sizing: border-box;
 }
 
+body._hidden {
+    overflow: hidden;
+}
+
 *:before,
 *:after {
     box-sizing: border-box;
@@ -534,21 +538,6 @@ body {
     padding: 9px 2px;
 }
 
-
-/* .header::before {
-    content: '';
-    top: 0;
-    right: 0;
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    background-color: red;
-    border-bottom-left-radius: 100%;
-    animation: bubble-animation .2s both;
-    transition: .2s;
-} */
-
 .burger__item {
     display: block;
     width: 30px;
@@ -586,14 +575,52 @@ body {
 /* ANIMATION Burger-background */
 
 @keyframes bubble-animation {
-    50% {
-        width: 30px;
-        height: 30px;
+    0% {
+        width: 10px;
+        height: 10px;
+        border-radius: 999999px;
+    }
+    10% {
+        width: 100px;
+        height: 100px;
+    }
+    20% {
+        width: 150px;
+        height: 150px;
+        border-top-right-radius: 0;
+    }
+    30% {
+        width: 200px;
+        height: 200px;
+    }
+    45% {
+        width: 300px;
+        height: 300px;
+    }
+    60% {
+        width: 450px;
+        height: 450px;
+    }
+    75% {
+        width: 500px;
+        height: 500px;   
+    }
+    80% {
+        width: 700px;
+        height: 600px;
+    }
+    85% {
+        width: 750px;
+        height: 950px;
+    }
+    95% {
+        border-bottom-left-radius: 999999px;
+        width: 1100px;
     }
     100% {
         width: 100%;
         height: 100%;
-        border-radius: 0;
+        border-radius: 0;   
     }
 }
 
@@ -601,6 +628,16 @@ body {
     0% {
         width: 3000px;
         height: 3000px;
+        background-color: rgba(255, 251, 0, 0.527);
+    }
+    50% {
+        width: 550px;
+        height: 550px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+        background-color: rgba(255, 255, 255, 0);
     }
 }
 
@@ -646,55 +683,145 @@ body {
 }
 
 @media(max-width:900px) {
-    .intro__title {
-        font-size: 35px;
+
+    .header {
+        position: fixed;
     }
+
+    .header._shrink {
+        height: 100px;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        transition: height 0.3s;
+    }
+
+    .header__logo._shrink img {
+        height: 20px;
+        -webkit-transition: height 0.3s;
+        -moz-transition: height 0.3s;
+        transition: height 0.3s;
+    }
+
+    .header::before {
+        content: '';
+        top: 0;
+        right: 0;
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        background-color: rgba(255, 0, 0, 0);
+        border-bottom-left-radius: 999999px;
+        animation: not-bubble-animation .2s both linear;
+        transition: 1.2s;
+    }
+
+    .header._active {
+        height: 100%;
+    }
+
+    .header._active::before {
+        content: '';
+        top: 0;
+        right: 0;
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        background-color: rgba(255, 196, 0, 0.315);
+        border-bottom-left-radius: 999999px;
+        animation: bubble-animation .3s both linear;
+        transition: .2s;
+        backdrop-filter: blur(20px);
+    }
+
+    .nav._active {
+        position: absolute;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 80px;
+        
+    }
+
+    .nav__link {
+        margin: 0 0 20px 0;
+        font-size: 50px;
+    }
+
+    .nav__link:nth-child(2n) {
+        padding-left: 50px;
+        border-left: 1px solid black;
+    }
+
+    .nav__link:nth-child(2n+1) {
+        border-right: 1px solid black;
+    }
+
     .nav {
         display: none;
     }
+
+    .intro__title {
+        font-size: 35px;
+    }
+
     .burger {
         display: block;
     }
+
     .intro__subtitle {
         font-size: 16px;
         margin-bottom: 30px;
     }
+
     /* feature*********************** */
     .features__item {
         width: 49%;
     }
+
     .team {
         margin: 50px 0 20px;
     }
+
     .team__item {
         width: 50%;
         text-align: center;
         margin-bottom: 20px;
     }
+
     .team__inner {
         align-items: flex-start;
         justify-content: center;
     }
+
     .team__foto {
         margin-left: auto;
         margin-right: auto;
     }
+
     .social {
         justify-content: center;
     }
+
     .reviews__inner {
         width: 100%;
         object-fit: cover;
     }
+
     .reviews__photo {
         width: 100%;
     }
+
     .container {
         width: 100%;
     }
+
     .reviews {
         background: brown;
     }
+
     .reviews__content {
         width: 100%;
         margin-left: 5px;
@@ -702,15 +829,19 @@ body {
         margin-top: 30px;
         margin-bottom: 20px;
     }
+
     .comment__author {
         margin-left: 5px;
     }
+
     .comment {
         margin-left: 5px;
     }
+
     .kto {
         margin-left: 4px;
     }
+
     .reviews__img {
         min-width: 899px;
         right: -15px;
@@ -722,10 +853,6 @@ body {
     .works__item {
         width: 49.7%
     }
-    .nav__link {
-        margin-left: 25px;
-        font-size: 15px;
-    }
 }
 
 @media(max-width:768px) {
@@ -733,44 +860,55 @@ body {
         height: auto;
         padding: 200px 0;
     }
+
     .intro__inner {
         padding-top: 30px;
     }
+
     .intro__title {
         padding-bottom: 40px;
     }
+
     .intro__subtitle {
         padding-bottom: 10px;
     }
+
     /* feature*********************** */
     .features__item {
         width: 99.9%;
         padding-left: 0%;
         padding-right: 0%;
     }
+
     .features {
         margin: 30px 0;
     }
+
     /*works ******************** */
     .works__item {
         width: 99%;
         height: 250px;
     }
+
     .works__inner {
         justify-content: center;
         text-align: center;
     }
+
     .team__inner {
         align-items: flex-start;
         justify-content: center;
     }
+
     /* reviews **********************/
     .reviews {
         width: 100%;
     }
+
     .reviews__img {
         min-width: 767px;
     }
+
     .footer__title {
         padding-bottom: 5px;
     }
