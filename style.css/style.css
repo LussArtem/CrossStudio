@@ -32,26 +32,11 @@ body._hidden {
 /*header*************************************/
 
 .header {
+    position: fixed;
     top: 0px;
-    height: 100px;
-    /*tyt nado reshit' kak sdelat' height*/
     left: 0px;
     z-index: 1000;
-    /*eto nomer slo9*/
     width: 100%;
-    position: absolute;
-    /* absolute potomy 4to v origin stranice tyt img*/
-}
-
-.header.fixed {
-    position: fixed;
-    background-color: rgb(236, 221, 152);
-}
-
-.header.fixed.header__inner {
-    border-bottom: none;
-    padding: 5px;
-    /* height: auto; */
 }
 
 .header__inner {
@@ -61,6 +46,21 @@ body._hidden {
     border-bottom: 1px solid coral;
     align-items: center;
 }
+
+.header__logo img {
+    transition: height .1s;
+    height: 89px;
+}
+
+.header._shrink .header__inner {
+    border-bottom: 0;
+}
+
+.header__logo._shrink img {
+    transition: height .3s;
+    height: 20px;
+}
+
 
 
 /*Nav***************************************/
@@ -684,24 +684,6 @@ body._hidden {
 
 @media(max-width:900px) {
 
-    .header {
-        position: fixed;
-    }
-
-    .header._shrink {
-        height: 100px;
-        -webkit-transition: height 0.3s;
-        -moz-transition: height 0.3s;
-        transition: height 0.3s;
-    }
-
-    .header__logo._shrink img {
-        height: 20px;
-        -webkit-transition: height 0.3s;
-        -moz-transition: height 0.3s;
-        transition: height 0.3s;
-    }
-
     .header::before {
         content: '';
         top: 0;
@@ -738,6 +720,7 @@ body._hidden {
     .nav._active {
         position: absolute;
         display: flex;
+        flex-direction: column;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
