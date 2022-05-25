@@ -532,7 +532,6 @@ body._hidden {
     position: relative;
     display: none;
     cursor: pointer;
-    /*navodish cursor i magi9*/
     background: none;
     border: none;
     padding: 9px 2px;
@@ -544,7 +543,6 @@ body._hidden {
     height: 4px;
     font-size: 0%;
     color: transparent;
-    /*prozra4nii text*/
     position: relative;
     background-color: black;
 }
@@ -578,7 +576,7 @@ body._hidden {
     0% {
         width: 10px;
         height: 10px;
-        border-radius: 999999px;
+        border-radius: 9999999999px;
     }
     10% {
         width: 100px;
@@ -589,7 +587,7 @@ body._hidden {
         height: 150px;
         border-top-right-radius: 0;
     }
-    30% {
+    /* 30% {
         width: 200px;
         height: 200px;
     }
@@ -604,18 +602,21 @@ body._hidden {
     75% {
         width: 500px;
         height: 500px;   
-    }
+    } */
     80% {
-        width: 700px;
-        height: 600px;
+        width: 89%;
+        height: 45%;
     }
     85% {
-        width: 750px;
-        height: 950px;
+        width: 92%;
+        height: 55%;
+        border-top-left-radius: 1px;
     }
     95% {
-        border-bottom-left-radius: 999999px;
-        width: 1100px;
+        /* border-top-right-radius: 80px; */
+        width: 95%;
+        height: 65%;
+        border-bottom-right-radius: 999999999999999999px;
     }
     100% {
         width: 100%;
@@ -628,7 +629,7 @@ body._hidden {
     0% {
         width: 3000px;
         height: 3000px;
-        background-color: rgba(255, 251, 0, 0.527);
+        background-color: rgb(255, 232, 167);
     }
     50% {
         width: 550px;
@@ -695,7 +696,7 @@ body._hidden {
         background-color: rgba(255, 0, 0, 0);
         border-bottom-left-radius: 999999px;
         animation: not-bubble-animation .2s both linear;
-        transition: 1.2s;
+        transition: 9.2s;
     }
 
     .header._active {
@@ -710,11 +711,11 @@ body._hidden {
         position: absolute;
         width: 0;
         height: 0;
-        background-color: rgba(255, 196, 0, 0.315);
-        border-bottom-left-radius: 999999px;
-        animation: bubble-animation .3s both linear;
-        transition: .2s;
-        backdrop-filter: blur(20px);
+        background-color: rgba(255, 231, 167, 0.521);
+        /* border-bottom-left-radius: 999999px; */
+        animation: bubble-animation .4s both linear;
+        transition: 1.2s;
+        backdrop-filter: blur(10px);
     }
 
     .nav._active {
@@ -724,22 +725,50 @@ body._hidden {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        line-height: 80px;
+        line-height: 40px;
         
     }
 
     .nav__link {
-        margin: 0 0 20px 0;
-        font-size: 50px;
+        display: flex;
+        margin: 0 0 35px 0;
+        padding: 0 10px 0 10px;
+        font-size: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: animated-text .3s linear .3s 1 normal both, animated-border .2s linear .3s normal both;
     }
 
     .nav__link:nth-child(2n) {
-        padding-left: 50px;
+        flex-direction: row-reverse;
         border-left: 1px solid black;
     }
 
     .nav__link:nth-child(2n+1) {
+        flex-direction: row;
         border-right: 1px solid black;
+        
+    }
+
+    @keyframes animated-text{
+        0% {
+            width: 0;
+            padding: 0;
+        }
+        
+        100% {
+            width: 322px;
+        }
+    }
+
+    @keyframes animated-border{
+        0% {
+            border-color: transparent;
+        }
+        
+        100% {
+            border-color: black;
+        }
     }
 
     .nav {
