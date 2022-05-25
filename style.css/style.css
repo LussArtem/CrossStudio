@@ -716,6 +716,7 @@ body._hidden {
         animation: bubble-animation .4s both linear;
         transition: 1.2s;
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
     .nav._active {
