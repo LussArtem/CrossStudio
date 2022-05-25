@@ -604,25 +604,25 @@ body._hidden {
         height: 500px;   
     } */
     80% {
-        width: 375px;
-        height: 55%;
+        width: 475px;
+        height: 575px;
     }
     85% {
-        width: 600px;
+        width: 700px;
         height: 700px;
         border-top-left-radius: 999999999999999999px;
     }
-    99% {
-        width: 1000px;
+    100% {
+        width: 10000px;
         height: 1000px;
-        border-bottom-right-radius: 9999999999999999px;
+        /* border-bottom-right-radius: 9999999999999999px; */
         border-radius: 0;
     }
-    100% {
+    /* 100% {
         width: 100%;
         height: 100%;
         border-radius: 0;   
-    }
+    } */
 }
 
 @keyframes not-bubble-animation {
