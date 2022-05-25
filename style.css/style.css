@@ -604,11 +604,11 @@ body._hidden {
         height: 500px;   
     } */
     80% {
-        width: 475px;
+        width: 575px;
         height: 575px;
     }
     85% {
-        width: 700px;
+        width: 800px;
         height: 700px;
         border-top-left-radius: 999999999999999999px;
     }
