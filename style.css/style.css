@@ -711,7 +711,7 @@ body._hidden {
         position: absolute;
         width: 0;
         height: 0;
-        background-color: rgba(255, 231, 167, 0.521);
+        background-color: rgba(255, 232, 167, 0.712);
         /* border-bottom-left-radius: 999999px; */
         animation: bubble-animation .4s both linear;
         transition: 1.2s;
