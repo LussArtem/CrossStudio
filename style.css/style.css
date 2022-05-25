@@ -585,7 +585,7 @@ body._hidden {
     20% {
         width: 150px;
         height: 150px;
-        border-top-right-radius: 0;
+        border-top-right-radius: 9999999px;
     }
     /* 30% {
         width: 200px;
@@ -604,19 +604,19 @@ body._hidden {
         height: 500px;   
     } */
     80% {
-        width: 89%;
-        height: 45%;
+        width: 375px;
+        height: 55%;
     }
     85% {
-        width: 92%;
-        height: 55%;
-        border-top-left-radius: 1px;
+        width: 600px;
+        height: 700px;
+        border-top-left-radius: 999999999999999999px;
     }
-    95% {
-        /* border-top-right-radius: 80px; */
-        width: 95%;
-        height: 65%;
-        border-bottom-right-radius: 999999999999999999px;
+    99% {
+        width: 1000px;
+        height: 1000px;
+        border-bottom-right-radius: 9999999999999999px;
+        border-radius: 0;
     }
     100% {
         width: 100%;
