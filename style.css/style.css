@@ -37,9 +37,9 @@ body._hidden {
     left: 0px;
     z-index: 1000;
     width: 100%;
-    background: -moz-linear-gradient(90deg, rgba(255,232,167,0.32816876750700286) 0%, rgba(255,232,167,1) 50%, rgba(255,232,167,0.3225665266106442) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(255,232,167,0.32816876750700286) 0%, rgba(255,232,167,1) 50%, rgba(255,232,167,0.3225665266106442) 100%);
-    background: linear-gradient(90deg, rgba(255,232,167,0.32816876750700286) 0%, rgba(255,232,167,1) 50%, rgba(255,232,167,0.3225665266106442) 100%);
+    background: -moz-linear-gradient(90deg, rgba(255,232,167,0.5) 0%, rgba(255,232,167,1) 50%, rgba(255,232,167,0.5) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(255,232,167,0.5) 0%, rgba(255,232,167,1) 50%, rgba(255,232,167,0.5) 100%);
+    background: linear-gradient(90deg, rgba(255,232,167,0.5) 0%, rgba(255,232,167,1) 50%, rgba(255,232,167,0.5) 100%);
 }
 
 .header__inner {
@@ -698,7 +698,7 @@ body._hidden {
 
     .header._active {
         height: 100%;
-        background-color: transparent;
+        background: transparent;
     }
 
     .header._active::before {

@@ -23,10 +23,10 @@ if (menuLinks.length > 0) {
             // 8. Получаем в константу сам объект
             const gotoBlock = document.querySelector(menuLink.dataset.goto);
 
-            // // Высчитываем положение объекта относительно высоты шапки 31
+            // // Высчитываем положение объекта относительно высоты шапки 83
             // const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
 
-            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - 10;
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - 83;
 
             // // Закрываем Бургер меню на мобиле при прокрутке
             // //  если имеет класс, то

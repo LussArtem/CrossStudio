@@ -3,7 +3,7 @@ document.addEventListener("scroll",
 // создаем функцию
 function(){
     // обьявлем константы
-    const shrinkHeader = 5;
+    const shrinkHeader = 2;
     const header = document.getElementById('jsHeader');
     let headerWrapper = document.querySelector('.header__logo');
     // слушатель событий
