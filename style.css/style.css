@@ -60,6 +60,10 @@ body._hidden {
     height: 89px;
 }
 
+.header._shrink {
+    position: fixed;
+}
+
 .header._shrink .header__inner {
     border-bottom: 0;
 }
