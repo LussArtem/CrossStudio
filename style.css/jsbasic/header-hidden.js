@@ -1,33 +1,35 @@
 // слушатель событий скролл
-document.addEventListener("scroll",
-// создаем функцию
-function(){
-    // обьявлем константы
-    const shrinkHeader = 2;
-    const header = document.getElementById('jsHeader');
-    let headerWrapper = document.querySelector('.header__logo');
-    // слушатель событий
-    window.addEventListener('scroll', function() {
-        const scroll = getCurrentScroll();
-            if ( scroll >= shrinkHeader ) {
-                headerWrapper.classList.add('_shrink');
-                header.classList.add('_shrink');
-            }
-            else {
-                headerWrapper.classList.remove('_shrink');
-                header.classList.remove('_shrink');
+document.addEventListener(
+    "scroll",
+    // создаем функцию
+    function() {
+        // обьявлем константы
+        const shrinkHeader = 2;
+        const header = document.getElementById("jsHeader");
+        let headerWrapper = document.querySelector(".header__logo");
+        // слушатель событий
+        window.addEventListener("scroll", function() {
+            const scroll = getCurrentScroll();
+            if (scroll >= shrinkHeader) {
+                headerWrapper.classList.add("_shrink");
+                header.classList.add("_shrink");
+            } else {
+                headerWrapper.classList.remove("_shrink");
+                header.classList.remove("_shrink");
             }
         });
-    function getCurrentScroll() {
-       return window.pageYOffset || document.documentElement.scrollTop;
+
+        function getCurrentScroll() {
+            return window.pageYOffset || document.documentElement.scrollTop;
+        }
     }
-});
+);
 
 
 // function fixedHeader(header, rootElement = document.body) {
 //     if (!header) throw new Error('No header found!');
 //     if (!rootElement) rootElement = document.body;
-    
+
 //     header.classList.add('fl-fixed-header');
 //     console.log('1');
 //     function setPadding() {
@@ -48,7 +50,7 @@ function(){
 //             // Less than threshold
 //             scrollPos = bodyTop;
 //             return;
-            
+
 //         }
 //         if (bodyTop > scrollPos) {
 //             // Up
@@ -70,35 +72,35 @@ function(){
 
 // const navigation = document.querySelector('.header__nav-menu')
 // const header = document.querySelector('.header')
-let toTop = 0
-let toDown = 0
-let toUp = 0
+let toTop = 0;
+let toDown = 0;
+let toUp = 0;
 
-window.addEventListener('scroll', () => {
-  const currentScroll = window.scrollY
-  if (currentScroll < 20) {
-    header.classList.remove('header_hidden')
-    toDown = 0
-    toUp = 0
-    return
-  }
-  if (currentScroll > toTop) {
-    toTop = currentScroll
-    toDown++
-    toUp = 0
-    if (toDown > 20) {
-      header.classList.add('header_hidden')
+window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll < 20) {
+        header.classList.remove("header_hidden");
+        toDown = 0;
+        toUp = 0;
+        return;
     }
-  } else {
-    toTop = currentScroll
-    toUp++
-    toDown = 0
+    if (currentScroll > toTop) {
+        toTop = currentScroll;
+        toDown++;
+        toUp = 0;
+        if (toDown > 20) {
+            header.classList.add("header_hidden");
+        }
+    } else {
+        toTop = currentScroll;
+        toUp++;
+        toDown = 0;
 
-    if (toUp > 20) {
-      header.classList.remove('header_hidden')
+        if (toUp > 20) {
+            header.classList.remove("header_hidden");
+        }
     }
-  }
-})
+});
 
 // !!!!
 // let lastScroll = 0;
