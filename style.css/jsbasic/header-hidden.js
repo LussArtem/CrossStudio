@@ -1,30 +1,29 @@
 // слушатель событий скролл
-document.addEventListener(
-    "scroll",
-    // создаем функцию
-    function() {
-        // обьявлем константы
-        const shrinkHeader = 2;
-        const header = document.getElementById("jsHeader");
-        let headerWrapper = document.querySelector(".header__logo");
-        // слушатель событий
-        window.addEventListener("scroll", function() {
-            const scroll = getCurrentScroll();
-            if (scroll >= shrinkHeader) {
-                headerWrapper.classList.add("_shrink");
-                header.classList.add("_shrink");
-            } else {
-                headerWrapper.classList.remove("_shrink");
-                header.classList.remove("_shrink");
-            }
-        });
+// document.addEventListener(
+//     "scroll",
+//     // создаем функцию
+//     function () {
+//         // обьявлем константы
+//         const shrinkHeader = 2;
+//         const header = document.getElementById("jsHeader");
+//         let headerWrapper = document.querySelector(".header__logo");
+//         // слушатель событий
+//         window.addEventListener("scroll", function () {
+//             const scroll = getCurrentScroll();
+//             if (scroll >= shrinkHeader) {
+//                 headerWrapper.classList.add("_shrink");
+//                 header.classList.add("_shrink");
+//             } else {
+//                 headerWrapper.classList.remove("_shrink");
+//                 header.classList.remove("_shrink");
+//             }
+//         });
 
-        function getCurrentScroll() {
-            return window.pageYOffset || document.documentElement.scrollTop;
-        }
-    }
-);
-
+//         function getCurrentScroll() {
+//             return window.scrollY || document.documentElement.scrollTop;
+//         }
+//     }
+// );
 
 // function fixedHeader(header, rootElement = document.body) {
 //     if (!header) throw new Error('No header found!');
